@@ -279,7 +279,7 @@ test('RequestNewFunds', done => {
     })
 })
 
-test.only('createKeys', async function () {
+test('createKeys', async function () {
     const entropy = Buffer.from([
         39,
         190,
@@ -322,7 +322,7 @@ test.only('createKeys', async function () {
 
 
 test('Derived public key', async function () {
-    const privatekeys = {fioKey:"5JmN1Nbr2nwhZm9C2Kj6WYRJTFmfYt51zumhrLBY2UdsCvUWYwU"}
+    const privatekeys = {fioKey:"5KG4yxR4j1S1UFk4mGraAfGrWh7TS5uiJmhtkG4vPunFWg84wuP"}
     const publickeys = FIOSDK.FIOSDK.derivedPublicKey(privatekeys.fioKey)
     console.log("%j",publickeys)
 })

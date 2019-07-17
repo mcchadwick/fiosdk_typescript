@@ -36,27 +36,7 @@ export class FIOSDK{
             })
         }
     }
-    static createPrivateKey(entropy:Buffer,useMnemonic=true):any{ 
-        if(useMnemonic){
-            return FIOSDK.createPrivateKeyMnemonic(entropy)
-        }else{
-            return FIOSDK.createPrivateKeyEntropy(entropy)
-        }
-    }
-
-    static createPrivateKeyEntropy(entropy:Buffer):any{        
-        const hdkey = require('hdkey')
-        const wif = require('wif')
-        var sha512 = require('js-sha512').sha512;
-        const master = hdkey.fromMasterSeed(sha512(entropy))
-        const node = master.derive("m/44'/235'/0'/0/0")
-        console.error("fioKey: "+wif.encode(128, node._privateKey, false))
-        console.error("publicKey: "+Ecc.PublicKey(node._publicKey).toString())
-        const fioKey = wif.encode(128, node._privateKey, false)
-        return {fioKey }
-    }
-    
-    static async createPrivateKeyMnemonic(entropy:Buffer):Promise<any>{        
+    static async createPrivateKey(entropy:Buffer):Promise<any>{ 
         const hdkey = require('hdkey')
         const wif = require('wif')
         const bip39 = require('bip39')
@@ -66,7 +46,7 @@ export class FIOSDK{
         const master = hdkey.fromMasterSeed(new Buffer(seed, 'hex'))
         const node = master.derive("m/44'/235'/0'/0/0")
         const fioKey = wif.encode(128, node._privateKey, false)
-        return {fioKey, mnemonic}
+        return { fioKey, mnemonic }
     }
 
     static derivedPublicKey(fioKey:string){

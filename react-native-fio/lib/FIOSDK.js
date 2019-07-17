@@ -34,26 +34,7 @@ class FIOSDK {
             });
         }
     }
-    static createPrivateKey(entropy, useMnemonic = true) {
-        if (useMnemonic) {
-            return FIOSDK.createPrivateKeyMnemonic(entropy);
-        }
-        else {
-            return FIOSDK.createPrivateKeyEntropy(entropy);
-        }
-    }
-    static createPrivateKeyEntropy(entropy) {
-        const hdkey = require('hdkey');
-        const wif = require('wif');
-        var sha512 = require('js-sha512').sha512;
-        const master = hdkey.fromMasterSeed(sha512(entropy));
-        const node = master.derive("m/44'/235'/0'/0/0");
-        console.error("fioKey: " + wif.encode(128, node._privateKey, false));
-        console.error("publicKey: " + Ecc.PublicKey(node._publicKey).toString());
-        const fioKey = wif.encode(128, node._privateKey, false);
-        return { fioKey };
-    }
-    static createPrivateKeyMnemonic(entropy) {
+    static createPrivateKey(entropy) {
         return __awaiter(this, void 0, void 0, function* () {
             const hdkey = require('hdkey');
             const wif = require('wif');
