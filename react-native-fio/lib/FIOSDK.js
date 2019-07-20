@@ -13,8 +13,8 @@ const queries = require("./transactions/queries");
 const SignedTransactions = require("./transactions/signed");
 const constants_1 = require("./utils/constants");
 const MockRegisterFioAddress_1 = require("./transactions/signed/MockRegisterFioAddress");
-const { Ecc } = require('fiojs');
-const fiojs_1 = require("fiojs");
+const { Ecc } = require('@dapix/fiojs');
+const fiojs_1 = require("@dapix/fiojs");
 class FIOSDK {
     constructor(privateKey, publicKey, baseUrl, io, fetchjson, registerMockUrl = '') {
         this.transactions = new Transactions_1.Transactions();

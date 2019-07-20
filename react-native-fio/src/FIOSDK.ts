@@ -4,8 +4,8 @@ import * as queries from './transactions/queries'
 import  * as  SignedTransactions  from './transactions/signed'
 import { Constants } from './utils/constants'
 import { MockRegisterFioAddress } from './transactions/signed/MockRegisterFioAddress'
-const { Ecc } = require('fiojs') 
-import { Fio } from 'fiojs'
+const { Ecc } = require('@dapix/fiojs') 
+import { Fio } from '@dapix/fiojs'
 import { AbiResponse } from './entities/AbiResponse';
 
 type FetchJson = (uri: string, opts?: Object) => Object
