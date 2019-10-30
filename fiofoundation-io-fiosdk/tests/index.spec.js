@@ -12,10 +12,8 @@ const fetchJson = async (uri, opts = {}) => {
 let privateKey, publicKey, privateKey2, publicKey2, testFioAddressName, testFioAddressName2
 const mnemonic = 'property follow talent guilt uncover someone gain powder urge slot taxi sketch'
 const mnemonic2 = 'round work clump little air glue lemon gravity shed charge assault orbit'
-const baseUrl = 'http://dev3.fio.dev:8889/v1/'
-// const baseUrl = 'http://localhost:62822/v1/'
-const mockBaseUrl = 'http://mock.dapix.io/mockd/DEV3'
-// const mockBaseUrl = 'http://localhost:62833/mockd/DEV3'
+const baseUrl = ''
+const mockBaseUrl = ''
 
 const faucetFioAddress = 'faucet:fio'
 const faucetPublicAddress = 'FIO5oBUYbtGTxMS66pPkjC2p8pbA3zCtc8XD4dq9fMut867GRdh82'
