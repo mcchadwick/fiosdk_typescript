@@ -24,6 +24,7 @@ import { EndPoint } from './entities/EndPoint'
 import { PublicAddress } from './entities/PublicAddress'
 import * as queries from './transactions/queries'
 import * as SignedTransactions from './transactions/signed'
+import * as UnsignedTransactions from './transactions/unsigned'
 import { MockRegisterFioName } from './transactions/signed/MockRegisterFioName'
 import { Transactions } from './transactions/Transactions'
 import { Constants } from './utils/constants'
@@ -834,6 +835,18 @@ export class FIOSDK {
     return pushTransaction.execute(this.privateKey, this.publicKey)
   }
 
+    /**
+   * Allows advanced user to prepare transaction for offline signing
+   *
+   * @param account Account name
+   * @param action Name of action
+   * @param data JSON object with params for action
+   */
+  public prepareTransaction(account: string, action: string, data: any): Promise<any> {
+    const prepareTransaction = new UnsignedTransactions.PrepareTransaction()
+    return prepareTransaction.execute(account, action, data)
+  }
+
   /**
    * @ignore
    */
@@ -981,6 +994,12 @@ export class FIOSDK {
         return this.getFeeForAddPublicAddress(params.fioAddress)
       case 'getMultiplier':
         return this.getMultiplier()
+      case 'prepareTransaction':
+        return this.prepareTransaction(
+            params.account,
+            params.action,
+            params.data
+        )
       case 'pushTransaction':
         return this.pushTransaction(params.account, params.action, params.data)
     }
