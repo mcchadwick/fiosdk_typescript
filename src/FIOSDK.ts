@@ -24,7 +24,6 @@ import { EndPoint } from './entities/EndPoint'
 import { PublicAddress } from './entities/PublicAddress'
 import * as queries from './transactions/queries'
 import * as SignedTransactions from './transactions/signed'
-import * as UnsignedTransactions from './transactions/unsigned'
 import { MockRegisterFioName } from './transactions/signed/MockRegisterFioName'
 import { Transactions } from './transactions/Transactions'
 import { Constants } from './utils/constants'
@@ -843,8 +842,8 @@ export class FIOSDK {
    * @param data JSON object with params for action
    */
   public prepareTransaction(account: string, action: string, data: any): Promise<any> {
-    const prepareTransaction = new UnsignedTransactions.PrepareTransaction()
-    return prepareTransaction.execute(account, action, data)
+    const prepareTransaction = new SignedTransactions.PrepareTransaction(action, account, data);
+    return prepareTransaction.execute(this.privateKey, this.publicKey);
   }
 
   /**

@@ -12,11 +12,11 @@ const fetchJson = async (uri, opts = {}) => {
  * Please set your private/public keys and existing fioAddresses
  */
 let privateKey = '',
-  publicKey = '',
-  privateKey2 = '',
-  publicKey2 = '',
-  testFioAddressName = '',
-  testFioAddressName2 = ''
+    publicKey = '',
+    privateKey2 = '',
+    publicKey2 = '',
+    testFioAddressName = '',
+    testFioAddressName2 = ''
 
 const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
 
@@ -428,6 +428,26 @@ describe('Testing generic actions', () => {
     const result = await fioSdk.genericAction('getMultiplier', {})
 
     expect(result).to.be.a('number')
+  })
+
+  it('prepareTransaction', async () =>{
+    const result = await fioSdk.genericAction('prepareTransaction', {
+        account: 'fio.token',
+        action: 'trnsfiopubky',
+        data: {
+            payee_public_key:
+                'FIO5VE6Dgy9FUmd1mFotXwF88HkQN1KysCWLPqpVnDMjRvGRi1YrM',
+            amount: '1000000000',
+            max_fee: 200000000,
+            tpid: '',
+        },
+    });
+
+    expect(result).to.have.all.keys(
+      'signatures',
+      'compression',
+      'packed_context_free_data',
+      'packed_trx');
   })
 
 })
