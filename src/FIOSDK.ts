@@ -63,14 +63,14 @@ export class FIOSDK {
    *
    * @returns New FIO private key
    */
-  public static async createPrivateKeyMnemonic(mnemonic: string) {
+  public static async createPrivateKeyMnemonic(mnemonic: string, path: string='m/44\'/235\'/0\'/0/0') {
     const hdkey = require('hdkey')
     const wif = require('wif')
     const bip39 = require('bip39')
     const seedBytes = await bip39.mnemonicToSeed(mnemonic)
     const seed = await seedBytes.toString('hex')
     const master = hdkey.fromMasterSeed(new Buffer(seed, 'hex'))
-    const node = master.derive('m/44\'/235\'/0\'/0/0')
+    const node = master.derive(path)
     const fioKey = wif.encode(128, node._privateKey, false)
     return { fioKey, mnemonic }
   }
