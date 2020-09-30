@@ -291,3 +291,33 @@ export type FioActionData =
     | FioUnregisterProducerActionData
     | FioUnregisterProxyActionData
     | FioVoteProducerActionData;
+
+export type FioActionAccount =
+    | 'fio.address'
+    | 'fio.reqobt'
+    | 'fio.token'
+    | 'eosio';
+
+export type FioActionName =
+    | 'addaddress'
+    | 'burnexpired'
+    | 'bpclaim'
+    | 'newfundsreq'
+    | 'tpidclaim'
+    | 'voteproxy'
+    | 'recordobt'
+    | 'regaddress'
+    | 'regdomain'
+    | 'regproducer'
+    | 'regproxy'
+    | 'rejectfndreq'
+    | 'renewaddress'
+    | 'renewdomain'
+    | 'setdomainpub'
+    | 'bundlevote'
+    | 'setfeemult'
+    | 'setfeevote'
+    | 'trnsfiopubky'
+    | 'unregprod'
+    | 'unregproxy'
+    | 'voteproducer';
