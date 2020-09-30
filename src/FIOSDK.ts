@@ -1012,3 +1012,5 @@ export class FIOSDK {
     return abi.execute(this.publicKey)
   }
 }
+
+export * as FioActionParameters from './entities/FioActionParameters'
