@@ -1014,3 +1014,4 @@ export class FIOSDK {
 }
 
 export * as FioActionParameters from './entities/FioActionParameters'
+export * as PublicAddress from './entities/PublicAddress'
