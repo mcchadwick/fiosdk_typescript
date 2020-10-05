@@ -36,7 +36,7 @@ export type FioClaimBPRewardsActionData = {
     actor?: string;
 };
 
-export const FioNewFundsRequestActionAccount = 'fio.reqopt';
+export const FioNewFundsRequestActionAccount = 'fio.reqobt';
 export const FioNewFundsRequestActionName = 'newfundsreq';
 /**
  * This api method will create a new funds request on the FIO chain.
@@ -71,7 +71,7 @@ export type FioProxyVoteActionData = {
     max_fee?: number;
 };
 
-export const FioRecordObtDataActionAccount = 'fio.reqopt';
+export const FioRecordObtDataActionAccount = 'fio.reqobt';
 export const FioRecordObtDataActionName = 'recordobt';
 /**
  * This call is made to record Other Blockchain Transaction (OBT) data on the FIO blockchain, e.g. 1 BTC was sent on Bitcoin Blockchain, and both sender and receiver have FIO Addresses.
