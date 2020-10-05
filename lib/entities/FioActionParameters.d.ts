@@ -30,7 +30,7 @@ export declare type FioClaimBPRewardsActionData = {
     fio_address: string;
     actor?: string;
 };
-export declare const FioNewFundsRequestActionAccount = "fio.reqopt";
+export declare const FioNewFundsRequestActionAccount = "fio.reqobt";
 export declare const FioNewFundsRequestActionName = "newfundsreq";
 /**
  * This api method will create a new funds request on the FIO chain.
@@ -62,7 +62,7 @@ export declare type FioProxyVoteActionData = {
     actor?: string;
     max_fee?: number;
 };
-export declare const FioRecordObtDataActionAccount = "fio.reqopt";
+export declare const FioRecordObtDataActionAccount = "fio.reqobt";
 export declare const FioRecordObtDataActionName = "recordobt";
 /**
  * This call is made to record Other Blockchain Transaction (OBT) data on the FIO blockchain, e.g. 1 BTC was sent on Bitcoin Blockchain, and both sender and receiver have FIO Addresses.
