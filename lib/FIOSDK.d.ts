@@ -406,4 +406,4 @@ export declare class FIOSDK {
     private getAbi;
 }
 export * as FioActionParameters from './entities/FioActionParameters';
-export * as PublicAddress from './entities/PublicAddress';
+export * from './entities/PublicAddress';
