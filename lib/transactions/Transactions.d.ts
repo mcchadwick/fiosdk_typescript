@@ -1,5 +1,6 @@
 import { AbiResponse } from '../entities/AbiResponse';
 import { RawTransaction } from '../entities/RawTransaction';
+import 'fast-text-encoding';
 declare type FetchJson = (uri: string, opts?: Object) => any;
 export declare class Transactions {
     static baseUrl: string;

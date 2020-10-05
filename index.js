@@ -6,3 +6,4 @@ exports.FIOSDK = FIOSDK;
 var constants = require('./lib/utils/constants');
 var fioConstants = constants.Constants;
 exports.fioConstants = fioConstants;
+exports.FioActionParameters = fio.FioActionParameters

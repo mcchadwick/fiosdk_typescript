@@ -1,6 +1,6 @@
 {
-    "name": "@mcchadwick/fiosdk",
-    "version": "1.2.12",
+    "name": "fiosdk-offline",
+    "version": "1.2.13",
     "description": "The Foundation for Interwallet Operability (FIO) is a consortium of leading blockchain wallets, exchanges and payments providers that seeks to accelerate blockchain adoption by reducing the risk, complexity, and inconvenience of sending and receiving cryptoassets.",
     "keywords": [
         "fio",
@@ -33,7 +33,6 @@
         "jest-fetch-mock": "^2.1.2",
         "mocha": "^6.2.2",
         "node-fetch": "^2.6.0",
-        "text-encoding": "^0.7.0",
         "ts-node": "^8.4.1",
         "tslint": "^5.20.0",
         "tslint-plugin-prettier": "^2.0.1",
@@ -42,7 +41,7 @@
     },
     "dependencies": {
         "@fioprotocol/fiojs": "1.0.1",
-        "@types/text-encoding": "0.0.35",
+        "@types/fast-text-encoding": "^1.0.1",
         "bip39": "^3.0.2",
         "fast-text-encoding": "^1.0.3",
         "hdkey": "^1.1.1",

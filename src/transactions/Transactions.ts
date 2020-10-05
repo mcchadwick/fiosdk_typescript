@@ -1,9 +1,13 @@
 import { Fio } from '@fioprotocol/fiojs'
-import { TextDecoder, TextEncoder } from 'text-encoding'
+//import { TextDecoder, TextEncoder } from 'fast-text-encoding'
+//import { TextEncoder, TextDecoder } from 'fast-text-encoding'
 import { AbiResponse } from '../entities/AbiResponse'
 import { RawTransaction } from '../entities/RawTransaction'
 import { ValidationError } from '../entities/ValidationError'
 import { validate } from '../utils/validation'
+
+//var textEncoding = require('fast-text-encoding')
+import 'fast-text-encoding'
 
 type FetchJson = (uri: string, opts?: Object) => any
 const textEncoder: TextEncoder = new TextEncoder()
