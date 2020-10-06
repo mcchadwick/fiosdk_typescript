@@ -3,6 +3,15 @@ export declare type FioFeeRatio = {
     end_point: string;
     value: number;
 };
+export declare type FioRequestContent = {
+    payee_public_address: string;
+    amount: string;
+    chain_code: string;
+    token_code: string;
+    memo: string;
+    hash: string;
+    offline_url: string;
+};
 export declare const FioAddPubAddressActionAccount = "fio.address";
 export declare const FioAddPubAddressActionName = "addaddress";
 /**

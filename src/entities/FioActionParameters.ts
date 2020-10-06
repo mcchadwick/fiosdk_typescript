@@ -5,6 +5,16 @@ export type FioFeeRatio = {
     value: number;
 };
 
+export type FioRequestContent = {
+    payee_public_address: string;
+    amount: string;
+    chain_code: string;
+    token_code: string;
+    memo: string;
+    hash: string;
+    offline_url: string;
+}
+
 export const FioAddPubAddressActionAccount = 'fio.address';
 export const FioAddPubAddressActionName = 'addaddress';
 
