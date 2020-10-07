@@ -12,6 +12,18 @@ export declare type FioRequestContent = {
     hash: string;
     offline_url: string;
 };
+export declare type FioObtDataContent = {
+    payer_public_address: string;
+    payee_public_address: string;
+    amount: string;
+    chain_code: string;
+    token_code: string;
+    status: string;
+    obt_id: string;
+    memo: string;
+    hash: string;
+    offline_url: string;
+};
 export declare const FioAddPubAddressActionAccount = "fio.address";
 export declare const FioAddPubAddressActionName = "addaddress";
 /**
@@ -77,12 +89,13 @@ export declare const FioRecordObtDataActionName = "recordobt";
  * This call is made to record Other Blockchain Transaction (OBT) data on the FIO blockchain, e.g. 1 BTC was sent on Bitcoin Blockchain, and both sender and receiver have FIO Addresses.
  */
 export declare type FioRecordObtDataActionData = {
+    payer_fio_address: string;
     payee_fio_address: string;
-    content: string;
-    fio_request_id: number;
-    max_fee: number;
-    tpid: string;
-    actor: string;
+    content: FioObtDataContent;
+    fio_request_id: string;
+    max_fee?: number;
+    tpid?: string;
+    actor?: string;
 };
 export declare const FioRegisterFioAddressActionAccount = "fio.address";
 export declare const FioRegisterFioAddressActionName = "regaddress";
